@@ -1,0 +1,253 @@
+:root {
+  --azul-oscuro: #0A1A2A;
+  --azul: #295485;
+  --azul-profundo: #102040;
+  --azul-sombra: #0E1D26;
+  --amarillo: #F2C84B;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Krub', sans-serif;
+  background-color: var(--azul-oscuro);
+  color: white;
+  scroll-behavior: smooth;
+  font-size: 18px;
+}
+
+header {
+  background-color: var(--azul);
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background: var(--azul-profundo);
+  font-family: 'Krub', sans-serif;
+  padding: 0.2rem 0.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.logo-container img {
+  height: 60px;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  font-size: 1.1rem;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: transform 0.6s ease, color 0.6s;
+}
+
+nav a:hover {
+  transform: scale(1.2);
+  background-color: var(--amarillo);
+  color: var(--azul-sombra);
+}
+
+.espaciador-nav {
+  height: 80px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-container img {
+  height: 90px;
+}
+
+.logo-container h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: var(--amarillo);
+}
+h2{
+  margin-bottom: 1.5rem;
+  margin-left: 2rem;
+  font-size: 2rem;
+  color: var(--amarillo);
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 1000px;
+  height: 400px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--azul-oscuro);
+    }
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+    }
+
+.slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.slide-text {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+  max-width: 80%;
+  z-index: 3;
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  z-index: 4;
+  border-radius: 7px;
+}
+
+.carousel-btn.prev {
+  left: 120px;
+}
+.carousel-btn.next {
+  right: 120px;
+}
+
+.certificaciones {
+  padding: 2rem;
+  background-color: var(--azul-oscuro);
+  color: var(--azul-profundo);
+}
+
+.certificaciones h2 {
+  margin-bottom: 1.5rem;
+  margin-left: auto;
+  font-size: 2rem;
+  color: var(--amarillo);
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.cert-card {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  max-width: 300px;
+  width: 100%;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.cert-card:hover {
+  transform: scale(1.05);
+  background-color: white;
+}
+
+.cert-card img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+  height: auto;
+}
+
+.img-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.img-modal .modal-content {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 90%;
+  margin-top: 5vh;
+  border-radius: 10px;
+  box-shadow: 0 0 20px black;
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-modal:hover {
+  color: var(--amarillo);
+}
+
